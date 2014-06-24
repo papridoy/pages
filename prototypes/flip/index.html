@@ -3,47 +3,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="resources/css/style.css">
 	<script type="text/javascript" src="resources/javascript/preview.js"></script>
-	<script>
-		var main = function(){
-			window.CLICK = false;
-			/*var book = new Flip('book');
-			var bookMove = function(event){
-				book.mouseMove(event);
-			}*/
 
-			var start = {
-				x:274+49,
-				y:728+51
-			}
-			book = new Flip('book','page3',start);
-			var eventr = {
-				pageX:774+49,
-				pageY:528+51
-			}
-			//book.mouseMove(eventr);
-
-
-
-			document.getElementById('book').addEventListener("mousedown", function(){
-				window.CLICK = true;
-			}, false);
-			document.getElementById('book').addEventListener("mouseup", function(){
-				//book.destroy();
-				window.CLICK = false;
-			}, false);
-
-			document.getElementById('body').addEventListener("mousemove", function(){
-				if(window.CLICK){
-					book.mouseMove(event);
-				}
-			}, false);
-
-		}
-		document.addEventListener("DOMContentLoaded", main, false);
-		
-		
-		
-	</script>
 </head>
 <body id='body'>
 	<div class="book" id="book">
@@ -62,5 +22,50 @@
 			</div>
 		</div>
 	</div>
+
+
+    <script>
+        var main = function(){
+            window.CLICK = false;
+//            var book = new Flip('book');
+//            var bookMove = function(event){
+//                book.mouseMove(event);
+//            }
+
+            var start = {
+                x:274+49,
+                y:728+51
+            }
+            book = new Flip('book','page3',start);
+            var eventr = {
+                pageX:774+49,
+                pageY:528+51
+            }
+            //book.mouseMove(eventr);
+
+
+
+            document.getElementById('book').addEventListener("mousedown", function(){
+                window.CLICK = true;
+                book.mouseOn(event);
+            }, false);
+            document.getElementById('book').addEventListener("mouseup", function(){
+                //book.destroy();
+                window.CLICK = false;
+            }, false);
+
+            document.getElementById('body').addEventListener("mousemove", function(){
+                if(window.CLICK){
+                    book.mouseMove(event);
+                }
+            }, false);
+
+        }
+        document.addEventListener("DOMContentLoaded", main, false);
+
+
+
+    </script>
+
 </body>
 </html>

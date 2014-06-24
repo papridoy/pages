@@ -2,10 +2,11 @@ DEBUG=false;
 
 function Flip(bookID,pageToFlipID){
 
+//    pageToFlipID = pageToFlipID ||
 	this.bookDiv = document.getElementById(bookID);
 	this.mask = document.getElementById(pageToFlipID);
-	this.backPage = document.getElementById('backPage');
-	this.frontPage = document.getElementById('frontPage');
+	this.backPage = document.getElementById('page3content');
+	this.frontPage = document.getElementById('page2content');
 	this.bookTop = this.bookDiv.offsetTop;
 	this.bookLeft = this.bookDiv.offsetLeft;
 	this.bookWidth = this.bookDiv.clientWidth;
