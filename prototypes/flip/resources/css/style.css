@@ -1,0 +1,133 @@
+/**************Reset block*****************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+:focus {
+    outline: 0;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+body{
+    font: normal normal normal 12px/18px Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;    
+}
+/*************Reset block end***************/
+body{
+    overflow:hidden;
+	-moz-user-select: none; -webkit-user-select: none; user-select: none;
+    background-color: #cccccc;
+
+}
+.book{
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	width: 774px;
+	height: 528px;
+	//border: 1px dashed black;
+    overflow: visible;
+}
+.canv{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -100;
+}
+.page{
+    position: absolute;
+    /*border: 1px solid #8b0000;*/
+    opacity: 1;
+    width: 387px;
+    height: 528px;
+    /*overflow: hidden;*/
+}
+.mask{
+    position: absolute;
+	overflow: hidden;
+    opacity: 1;
+    /*border: 1px solid #b8860b;*/
+	width: 774px; 		/* 2 ширины страницы */
+	height: 1584px; 	/* 3 высоты страницы */
+
+}
+
+
+/* рельеф на странице */
+.maskRefl{
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    /*border: 1px solid #b8860b;*/
+}
+.divRefl{
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    /*border: 1px solid #00860b;*/
+}
+
+
+/* рельеф на странице */
+.maskBlur{
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    /*border: 1px solid #b8860b;*/
+}
+.divBlurBack{
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    /*border: 1px solid #00860b;*/
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+.divBlurFront{
+    position: absolute;
+    opacity: 1;
+    /*border: 1px solid #f0000b;*/
+    box-shadow: 10px 0 15px rgba(0,0,0,0.5);
+}
+
+
+.vis{
+
+	display: block;
+}
+.right{
+	left: 387px;
+}
+.page img{
+	width: 387px;
+}
+.zindex{
+	z-index: -1;
+}

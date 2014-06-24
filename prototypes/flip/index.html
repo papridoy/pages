@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="resources/css/style.css">
+	<script type="text/javascript" src="resources/javascript/preview.js"></script>
+	<script>
+		var main = function(){
+			window.CLICK = false;
+			/*var book = new Flip('book');
+			var bookMove = function(event){
+				book.mouseMove(event);
+			}*/
+
+			var start = {
+				x:274+49,
+				y:728+51
+			}
+			book = new Flip('book','page3',start);
+			var eventr = {
+				pageX:774+49,
+				pageY:528+51
+			}
+			//book.mouseMove(eventr);
+
+
+
+			document.getElementById('book').addEventListener("mousedown", function(){
+				window.CLICK = true;
+			}, false);
+			document.getElementById('book').addEventListener("mouseup", function(){
+				//book.destroy();
+				window.CLICK = false;
+			}, false);
+
+			document.getElementById('body').addEventListener("mousemove", function(){
+				if(window.CLICK){
+					book.mouseMove(event);
+				}
+			}, false);
+
+		}
+		document.addEventListener("DOMContentLoaded", main, false);
+		
+		
+		
+	</script>
+</head>
+<body id='body'>
+	<div class="book" id="book">
+		<div class="mask vis" id="page1">
+			<div class="page" id="page1content">
+				<img src="resources/images/page0047_i2.jpg" />
+			</div>
+		</div>
+        <div class="mask" id="page3">
+			<div class="page" id="page2content"><img src="resources/images/page0048_i2.jpg" /></div>
+			<div class="page" id="page3content"><img src="resources/images/page0050_i2.jpg" /></div>
+        </div>
+		<div class="mask vis" id="page4">
+			<div class="page right zindex" id="page4content">
+				<img src="resources/images/page0051_i2.jpg" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

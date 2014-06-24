@@ -1,0 +1,62 @@
+<html>
+<head>
+	<script type="text/javascript" src="shrimp.js"></script>
+	<script type="text/javascript" src="temp.js"></script>
+	<script type="text/javascript" src="shrimpEvents.js"></script>
+	<script type="text/javascript">
+		var main = function(){
+			'use strict';
+			/*var test = function(event){
+				console.log('fire');
+			}
+			_dom('#test').on('tap',test);
+
+
+			var click = function(){
+				var event = document.createEvent('Event');
+				event.initEvent('tap', true, true);
+
+				_dom('#test').el.dispatchEvent(event);
+			}
+			_dom('#test').on('click',click);*/
+			//mobileInit({'pass':'', 'ticket':'', 'hash':'MlvL4Pu', 'serv':'publ.com', 'version':'2.4.33', 'name':'HermanMiller - Filing and Storage'});
+
+			var test = function(event){
+				console.dir(event)
+			};
+			//_dom('#test').on('top',test);
+
+
+
+
+			var element = document.getElementById('test');
+			element.attachEvent('ontop',test);
+
+
+			window.setTimeout(function(){
+				var o = document.createEventObject();
+				o.detail = 0;
+				o.screenX = 12;
+				o.screenY = 345;
+				o.clientX = 7;
+				o.clientY = 220;
+				o.ctrlKey = false;
+				o.altKey = false;
+				o.shiftKey = true;
+				o.metaKey = false;
+				o.button = 0;
+				o.relatedTarget = null;
+				element.fireEvent('ontop',o);
+			},1000);
+
+		};
+		window._ready(main);
+	</script>
+</head>
+<body>
+
+<div style="background-color: red;width: 100px;height: 100px;position: absolute;top:100px;left:100px;" id="test">
+
+</div>
+</body>
+</html>
